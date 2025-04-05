@@ -1,4 +1,4 @@
-# HOFEC
+# HOFC-FIF
 手物特征互补与频域信息融合模型（Hand-Object Feature Complementary-Frequency Information Fusion，HOFC-FIF）是一个用于联合估计手物姿态的网络模型~
 
 ### 项目结构<br>
