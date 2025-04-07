@@ -62,10 +62,7 @@ class SupplyConv(nn.Module):
         X_l2l = self.l2l(X_l)
         X_h2l = self.h2l(X_h2l)
 
-        # X_l2h = self.upsample(X_l2h)
         X_l2h = F.interpolate(X_l2h, (int(X_h2h.size()[2]),int(X_h2h.size()[3])), mode='bilinear')
-        # print('X_l2h:{}'.format(X_l2h.shape))
-        # print('X_h2h:{}'.format(X_h2h.shape))
         
         # 连接部分，原始的高频特征h2h与低频转高频特征l2h连接
         X_h = X_l2h + X_h2h
@@ -93,8 +90,6 @@ class FuseConv(nn.Module):
 
         if self.stride == 2:
             X_h, X_l = self.h2g_pool(X_h), self.h2g_pool(X_l)
-
-        # 这里的叫法h2h和l2h，感觉没太大必要
 
         # 先将2个分量的通道对齐输出通道
         X_h2h = self.h2h(X_h) # 高频组对齐通道
@@ -135,12 +130,4 @@ class FIF(nn.Module):
 
         x_ret = self.lst((x_h_5, x_l_5)) # (1,64,64,64)
         return x_ret
-
-        # x_l_11 = F.interpolate(x_l_1, (int(x_h_1.size()[2]), int(x_h_1.size()[3])), mode='bilinear')
-        # x_ret, x_h_6, x_l_6 = self.lst((x_h_5, x_l_5)) # (1,64,64,64)
-        # return x0, x_ret,x_hh, x_ll,x_h_1, x_l_1
-
-        # return x0, x_ret, x_hh, x_ll, x_h_6, x_l_6
-        # return x0, x_ret
-    # fea_name = ['_before','_after', '_beforeH', '_beforeL', '_afterH', '_afterL', '_afterH0', '_afterL0']
 
