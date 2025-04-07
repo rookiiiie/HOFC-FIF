@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from torchvision.utils import make_grid
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-# 来自知乎：
 
 # 空间注意力模块
 class SpGate(nn.Module):
