@@ -25,7 +25,6 @@ ${ROOT}
 ### 数据<br>
 + [HO3D](https://www.tugraz.at/institute/icg/research/team-lepetit/research-projects/hand-object-3d-pose-annotation)
 + [Dex-ycb](https://dex-ycb.github.io)
-+ [测试数据](https://drive.google.com/drive/folders/19oXFxNVhbg3VMPEwlrYUsFvELRXN2E4L?usp=drive_link)
 
 
 ### 训练 & 测试<br>
