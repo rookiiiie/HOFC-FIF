@@ -180,7 +180,7 @@ class HOFEC(nn.Module):
 
         # FIF
         hand = checkpoint(self.FIF_h,hand)
-        y = checkpoint(self.FIF_h,y)
+        y = checkpoint(self.FIF_o,y)
 
 
         # obj-decoder
